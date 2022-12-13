@@ -19,6 +19,8 @@ body {
 }
 
 header {
+  position: fixed;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -49,22 +51,87 @@ header .searchBox {
   display: flex;
   align-items: center;
 }
+header .searchBox form {
+  display: flex;
+  align-items: center;
+}
 header button {
   cursor: pointer;
   background-color: #fff;
+  height: 40px;
 }
 header button:hover {
   background-color: #e2e2e2;
 }
+header button img {
+  width: 20px;
+}
 
-header input,
+header input {
+  outline: none;
+  border: 0;
+  height: 40px;
+  padding: 0 15px;
+  border-radius: 8px 0 0 8px;
+}
+
 header button {
   outline: none;
   border: 0;
-  padding: 10px;
-  border-radius: 8px;
+  height: 40px;
+  padding: 0 15px;
+  border-radius: 0 8px 8px 0;
 }
 
 #content {
   font-family: "pokeBit";
+  display: flex;
+  justify-content: center;
+  max-width: 50rem;
+}
+
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6rem;
+}
+
+.pokeCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  height: 200px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px 18px 8px 18px;
+}
+.pokeCard span {
+  font-size: 22px;
+  z-index: 1;
+}
+.pokeCard .pokeType {
+  position: absolute;
+  margin-top: 40px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  z-index: 1;
+}
+.pokeCard .pokeImg {
+  position: absolute;
+  right: 15px;
+  bottom: 5px;
+  z-index: 1;
+}
+.pokeCard .pokeImg img {
+  width: 150px;
+}
+.pokeCard .typeImg {
+  overflow: hidden;
+  z-index: 0;
+}
+.pokeCard .typeImg img {
+  opacity: 0;
 }/*# sourceMappingURL=style.css.map */

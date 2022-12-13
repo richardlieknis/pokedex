@@ -1,6 +1,5 @@
 let offset = 0;
-let maxPokemon = 5;
-
+let maxPokemon = 10;
 
 async function init() {
     let url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${maxPokemon}`;
@@ -10,9 +9,12 @@ async function init() {
     loadPokemonArray(respJson.results);
 }
 
-function loadPokemonArray(pokemons) {
+async function loadPokemonArray(pokemons) {
     for (let i = 0; i < pokemons.length; i++) {
         const pokemon = pokemons[i];
-        console.log(pokemon.url);
+        let response = await fetch(pokemon.url);
+        let respJson = await response.json();
+
+        console.log(respJson.name);
     }
 }

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PokeDex</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/pokeCardStyles.css" />
     <script src="main.js"></script>
 </head>
 
@@ -20,11 +21,27 @@
             <div class="searchBox">
                 <form onsubmit="loadPokemon(); return false;">
                     <input type="text" id="search" placeholder="Kannst du sie fangen?" />
-                    <button>Pokemon Suchen</button>
+                    <button>
+              <img src="src/img/search.png" />
+            </button>
                 </form>
             </div>
         </header>
-        <div id="content">HIER CONTENT</div>
+        <div id="content">
+            <!-- EINZELNE POKE CARD -->
+            <div class="pokeCard grass-box">
+                <span>bulbasaur</span>
+                <div class="pokeType grass-badge">grass</div>
+                <div class="pokeImg">
+                    <img src="src/img/2.png" />
+                </div>
+                <div class="typeImg">
+                    <img src="src/img/type_grass.png" />
+                </div>
+            </div>
+
+            <!-- ENDE CONTENT -->
+        </div>
     </div>
 </body>
 

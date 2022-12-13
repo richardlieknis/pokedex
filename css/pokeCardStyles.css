@@ -1,0 +1,204 @@
+:root {
+    --bug-bg: #68c47c;
+    --dark-bg: #6c6b94;
+    --dragon-bg: #8cd8e3;
+    --electric-bg: #fcfca6;
+    --fairy-bg: #f04288;
+    --fighting-bg: #f38668;
+    --fire-bg: #fe818b;
+    --flying-bg: #b5cad9;
+    --ghost-bg: #a682a6;
+    --grass-bg: #47dc6c;
+    --ground-bg: #97652b;
+    --ice-bg: #d6effa;
+    --normal-bg: #dab9c3;
+    --poison-bg: #b691e3;
+    --psychic-bg: #f94da9;
+    --rock-bg: #b6502b;
+    --steel-bg: #68caa9;
+    --water-bg: #b9cdfd;
+    --bug-bd: #1C4B27;
+    --dark-bd: #040706;
+    --dragon-bd: #448B95;
+    --electric-bd: #E3E328;
+    --fairy-bd: #961843;
+    --fighting-bd: #993E24;
+    --fire-bd: #AB1F23;
+    --flying-bd: #4A677D;
+    --ghost-bd: #33336B;
+    --grass-bd: #127B3D;
+    --ground-bd: #6E491F;
+    --ice-bd: #86D2F5;
+    --normal-bd: #75515B;
+    --poison-bd: #5E2D88;
+    --psychic-bd: #A22B6B;
+    --rock-bd: #481907;
+    --steel-bd: #5F756D;
+    --water-bd: #1552E2;
+    --opacity: 0.7;
+    --border-size: 3px;
+}
+
+.bug-box {
+    background-color: var(--bug-bg);
+    border: solid var(--border-size) var(--bug-bd);
+}
+
+.bug-badge {
+    background-color: var(--bug-bd);
+}
+
+.dark-box {
+    background-color: var(--dark-bg);
+    border: solid var(--border-size) var(--dark-bd);
+}
+
+.dark-badge {
+    background-color: var(--dark-bd);
+}
+
+.dragon-box {
+    background-color: var(--dragon-bg);
+    border: solid var(--border-size) var(--dragon-bd);
+}
+
+.dragon-badge {
+    background-color: var(--dragon-bd);
+}
+
+.electric-box {
+    background-color: var(--electric-bg);
+    border: solid var(--border-size) var(--electric-bd);
+    color: black;
+}
+
+.electric-badge {
+    background-color: var(--electric-bd);
+}
+
+.fairy-box {
+    background-color: var(--fairy-bg);
+    border: solid var(--border-size) var(--fairy-bd);
+}
+
+.fairy-badge {
+    background-color: var(--fairy-bd);
+}
+
+.fighting-box {
+    background-color: var(--fighting-bg);
+    border: solid var(--border-size) var(--fighting-bd);
+}
+
+.fighting-badge {
+    background-color: var(--fighting-bd);
+}
+
+.fire-box {
+    background-color: var(--fire-bg);
+    border: solid var(--border-size) var(--fire-bd);
+}
+
+.fire-badge {
+    background-color: var(--fire-bd);
+}
+
+.flying-box {
+    background-color: var(--flying-bg);
+    border: solid var(--border-size) var(--flying-bd);
+}
+
+.flying-badge {
+    background-color: var(--flying-bd);
+}
+
+.ghost-box {
+    background-color: var(--ghost-bg);
+    border: solid var(--border-size) var(--ghost-bd);
+}
+
+.ghost-badge {
+    background-color: var(--ghost-bd);
+}
+
+.grass-box {
+    background-color: var(--grass-bg);
+    border: solid var(--border-size) var(--grass-bd);
+}
+
+.grass-badge {
+    background-color: var(--grass-bd);
+}
+
+.ground-box {
+    background-color: var(--ground-bg);
+    border: solid var(--border-size) var(--ground-bd);
+}
+
+.ground-badge {
+    background-color: var(--ground-bd);
+}
+
+.ice-box {
+    background-color: var(--ice-bg);
+    border: solid var(--border-size) var(--ice-bd);
+    color: black;
+}
+
+.ice-badge {
+    background-color: var(--ice-bd);
+}
+
+.normal-box {
+    background-color: var(--normal-bg);
+    border: solid var(--border-size) var(--normal-bd);
+}
+
+.normal-badge {
+    background-color: var(--normal-bd);
+}
+
+.poison-box {
+    background-color: var(--poison-bg);
+    border: solid var(--border-size) var(--poison-bd);
+}
+
+.poison-badge {
+    background-color: var(--poison-bd);
+}
+
+.psychic-box {
+    background-color: var(--psychic-bg);
+    border: solid var(--border-size) var(--psychic-bd);
+}
+
+.psychic-badge {
+    background-color: var(--psychic-bd);
+}
+
+.rock-box {
+    background-color: var(--rock-bg);
+    border: solid var(--border-size) var(--rock-bd);
+}
+
+.rock-badge {
+    background-color: var(--rock-bd);
+}
+
+.steel-box {
+    background-color: var(--steel-bg);
+    border: solid var(--border-size) var(--steel-bd);
+}
+
+.steel-badge {
+    background-color: var(--steel-bd);
+}
+
+.water-box {
+    background-color: var(--water-bg);
+    border: solid var(--border-size) var(--water-bd);
+}
+
+.water-badge {
+    background-color: var(--water-bd);
+}
