@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "poke";
+  src: url(src/fonts/Pokemon\ Solid.ttf);
+}
+@font-face {
+  font-family: "pokeBit";
+  src: url(src/fonts/pkmn.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "poke";
+  color: #fff;
+  background-color: #1a1a1a;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 5rem;
+  background-color: crimson;
+  border-radius: 0 0 24px 24px;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  font-size: 36px;
+  letter-spacing: 1px;
+  gap: 0.75rem;
+  width: 300px;
+}
+header .logo img {
+  width: 50px;
+  transition: transform 5s ease-in-out;
+}
+header .logo img:hover {
+  transform: rotate(3600deg);
+}
+header .logo span {
+  padding-bottom: 1rem;
+}
+header .searchBox {
+  display: flex;
+  align-items: center;
+}
+header button {
+  cursor: pointer;
+  background-color: #fff;
+}
+header button:hover {
+  background-color: #e2e2e2;
+}
+
+header input,
+header button {
+  outline: none;
+  border: 0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#content {
+  font-family: "pokeBit";
+}/*# sourceMappingURL=style.css.map */
