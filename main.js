@@ -1,5 +1,6 @@
 let offset = 3;
-let maxPokemon = 1;
+let maxPokemon = 6;
+let allPokemons = [];
 
 async function init() {
     let url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${maxPokemon}`;
@@ -14,15 +15,25 @@ async function loadPokemonArray(pokemons) {
         const pokemon = pokemons[i];
         let response = await fetch(pokemon.url);
         let respJson = await response.json();
-
-        getPokemonAttributes(respJson);
+        allPokemons.push(respJson);
+        renderAllPokemons(i);
     }
 }
 
-function getPokemonAttributes(pokemon) {
+function renderAllPokemons(id) {
     let content = document.getElementById("content");
-    console.log(pokemon);
-    console.log(pokemon.types[0].type);
-    console.log(pokemon.sprites.other["official-artwork"]["front_default"]);
-    content.innerHTML += pokeCardTemp(pokemon);
+    content.innerHTML += pokeCardTemp(allPokemons[id], id);
+    renderTypes(id);
+
 }
+
+function renderTypes(id) {
+    for (let i = 0; i < allPokemons[id].types.length; i++) {
+        const type = allPokemons[id].types[i];
+        console.log(type.type.name);
+        let pokeTypes = document.getElementById(`pokeTypes${id}`);
+        pokeTypes.innerHTML += pokeTypeTemp(allPokemons[id], i);
+    }
+}
+
+//TODO - NÄCHSTES TODO -> FARBEN ANPASSEN!
