@@ -1,5 +1,5 @@
-let offset = 0;
-let maxPokemon = 10;
+let offset = 3;
+let maxPokemon = 1;
 
 async function init() {
     let url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${maxPokemon}`;
@@ -15,6 +15,14 @@ async function loadPokemonArray(pokemons) {
         let response = await fetch(pokemon.url);
         let respJson = await response.json();
 
-        console.log(respJson.name);
+        getPokemonAttributes(respJson);
     }
+}
+
+function getPokemonAttributes(pokemon) {
+    let content = document.getElementById("content");
+    console.log(pokemon);
+    console.log(pokemon.types[0].type);
+    console.log(pokemon.sprites.other["official-artwork"]["front_default"]);
+    content.innerHTML += pokeCardTemp(pokemon);
 }
