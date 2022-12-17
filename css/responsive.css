@@ -1,0 +1,5 @@
+@media (max-width: 470px) {
+    header .logo span {
+        display: none;
+    }
+}

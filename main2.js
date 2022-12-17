@@ -6,20 +6,17 @@ let urlApi = "https://pokeapi.co/api/v2/pokemon";
 
 let test;
 
-async function fetchPokemons() {
+async function init() {
     let url = `${urlApi}${urlAtt}`;
     let response = await fetch(url);
     let respJson = await response.json();
 
-    return await respJson.results;
-}
-
-async function init() {
-    let pokemons = await fetchPokemons();
-    loadPokemonArray(pokemons);
+    test = respJson;
+    loadPokemonArray(respJson.results);
 }
 
 async function loadPokemonArray(pokemons) {
+
     for (let i = 0; i < pokemons.length; i++) {
         const pokemon = pokemons[i];
         let response = await fetch(pokemon.url);

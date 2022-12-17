@@ -116,6 +116,7 @@ header button {
 .pokeCard span {
   font-size: 22px;
   z-index: 1;
+  text-transform: capitalize;
 }
 .pokeCard .pokeTypes {
   position: absolute;
@@ -146,6 +147,6 @@ header button {
   opacity: 0;
 }
 .pokeCard:hover {
-  scale: 1.1;
-  transform: rotate(1deg);
+  scale: 1.05;
+  transform: rotate(2deg);
 }/*# sourceMappingURL=style.css.map */

@@ -8,6 +8,7 @@
     <title>PokeDex</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="css/pokeCardStyles.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
     <script src="main.js"></script>
     <script src="js/templates.js"></script>
 </head>
@@ -21,7 +22,7 @@
             </div>
             <div class="searchBox">
                 <form onsubmit="loadPokemon(); return false;">
-                    <input type="text" id="search" placeholder="Kannst du sie fangen?" />
+                    <input type="text" id="search" placeholder="Kannst du sie fangen?" onkeydown="filterPokemons()" />
                     <button>
               <img src="src/img/search.png" />
             </button>
