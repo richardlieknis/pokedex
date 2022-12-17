@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/responsive.css" />
     <script src="main.js"></script>
     <script src="js/templates.js"></script>
+    <script src="js/searchPokemon.js"></script>
 </head>
 
 <body onload="init()">
@@ -21,7 +22,7 @@
                 <span>Pokedex</span>
             </div>
             <div class="searchBox">
-                <form onsubmit="loadPokemon(); return false;">
+                <form onsubmit="filterPokemons(); return false;">
                     <input type="text" id="search" placeholder="Kannst du sie fangen?" onkeydown="filterPokemons()" />
                     <button>
               <img src="src/img/search.png" />

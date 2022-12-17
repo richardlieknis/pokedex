@@ -69,7 +69,7 @@
 .electric-box {
     background-color: var(--electric-bg);
     border: solid var(--border-size) var(--electric-bd);
-    color: black;
+    color: #111;
 }
 
 .electric-badge {
