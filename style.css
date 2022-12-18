@@ -73,6 +73,7 @@ header input {
   outline: none;
   border: 0;
   height: 40px;
+  width: 100px;
   padding: 0 15px;
   border-radius: 8px 0 0 8px;
 }
