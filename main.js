@@ -62,7 +62,7 @@ function renderTypes(id) {
     changeCardColor(id, 0);
 }
 
-window.onscroll = function() {
+window.onscroll = () => {
     if ((window.innerHeight + window.scrollY - 95) >= document.body.offsetHeight) {
         init(20);
     }

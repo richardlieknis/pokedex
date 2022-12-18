@@ -1,8 +1,10 @@
 function pokeCardTemp(pokemon, i) {
     return `
     <div id="pokeCard${i}" class="pokeCard">
-    
-        <span>${pokemon.name} #${i}</span>
+        <div class="cardHeader">
+                <span>${pokemon.name} </span>
+                <span style="font-size: 12px">#${i}</span>
+        </div>
         <div class="pokeTypes" id="pokeTypes${i}">
         </div>
         <div class="pokeImg">

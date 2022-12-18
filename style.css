@@ -112,6 +112,11 @@ header button {
   cursor: pointer;
   transition: all 220ms ease-in-out;
 }
+.pokeCard .cardHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
 .pokeCard span {
   font-size: 22px;
   z-index: 1;
@@ -133,7 +138,7 @@ header button {
   border-radius: 12px;
 }
 .pokeCard .pokeTypes .pokeType:first-child {
-  box-shadow: 0 -1px 0px 1px #fff, 0 1px 0px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -1px 0px 1px rgba(255, 255, 255, 0.2666666667), 0 1px 0px 1px rgba(17, 17, 17, 0.1333333333);
 }
 .pokeCard .pokeImg {
   position: absolute;
