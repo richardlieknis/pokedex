@@ -212,6 +212,21 @@ header button {
   scale: 1.5;
   transform: translateY(10px);
 }
+.selectedPokemonOverlay .currentBox .navBtns {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1.25rem;
+  top: 170px;
+  filter: invert(1);
+}
+.selectedPokemonOverlay .currentBox .navBtns img {
+  cursor: pointer;
+}
+.selectedPokemonOverlay .currentBox .navBtns img:hover {
+  scale: 1.2;
+}
 .selectedPokemonOverlay .currentBox .typeImg {
   position: absolute;
   top: 0.625rem;

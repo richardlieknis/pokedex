@@ -30,13 +30,26 @@ function currentPokemonTemp(pokemon, i) {
                     <span>${pokemon.name} </span>
                     <span style="font-size: 12px">#${i+1}</span>
                 </div>
+
                 <div class="pokeTypes" id="pokeTypes${i}"></div>
+
                 <div class="pokeImg">
                     <img src="${pokemon.sprites.other["official-artwork"]["front_default"]}" />
                 </div>
+
+                <div class="navBtns">
+                    <div onclick="navBox("left")">
+                        <img src="src/img/navBtn.png">
+                    </div>
+                    <div onclick="navBox("right")>
+                        <img src="src/img/navBtn.png" style="transform: scaleX(-1)">
+                    </div>
+                </div>
+
                 <div class="typeImg">
                     <img src="src/img/types/type_${pokemon.types[0].type.name}.png" />
                 </div>
+
                 <div class="infoBox">Infos</div>
             </div>
     `;
