@@ -63,6 +63,23 @@ function renderTypes(id) {
     changeCardColor(id, 0);
 }
 
+function closeOverlay() {
+    const overlay = document.getElementById("overlay");
+    overlay.classList.add("d-none");
+}
+
+function dontClose(event) {
+    event.stopPropagation();
+}
+
+
+function openPokemonOverlay(id) {
+    const overlay = document.getElementById("overlay");
+    overlay.classList.remove("d-none");
+    overlay.innerHTML = "";
+    overlay.innerHTML = currentPokemonTemp(allPokemons[id], id);
+}
+
 window.onscroll = () => {
     if ((window.innerHeight + window.scrollY - 95) >= document.body.offsetHeight) {
         init(20);
