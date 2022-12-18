@@ -3,7 +3,7 @@ function pokeCardTemp(pokemon, i) {
     <div id="pokeCard${i}" class="pokeCard" onclick="openPokemonOverlay(${i})">
         <div class="cardHeader">
                 <span>${pokemon.name} </span>
-                <span style="font-size: 12px">#${i}</span>
+                <span style="font-size: 12px">#${i+1}</span>
         </div>
         <div class="pokeTypes" id="pokeTypes${i}">
         </div>
@@ -25,10 +25,10 @@ function pokeTypeTemp(pokemon, i) {
 
 function currentPokemonTemp(pokemon, i) {
     return `
-            <div class="currentBox fighting-box" onclick="dontClose(event)">
+            <div id="currentBox" class="currentBox" onclick="dontClose(event)">
                 <div class="cardHeader">
                     <span>${pokemon.name} </span>
-                    <span style="font-size: 12px">#${i}</span>
+                    <span style="font-size: 12px">#${i+1}</span>
                 </div>
                 <div class="pokeTypes" id="pokeTypes${i}"></div>
                 <div class="pokeImg">

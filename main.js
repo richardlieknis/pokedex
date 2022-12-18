@@ -78,6 +78,7 @@ function openPokemonOverlay(id) {
     overlay.classList.remove("d-none");
     overlay.innerHTML = "";
     overlay.innerHTML = currentPokemonTemp(allPokemons[id], id);
+    changeOverlayColor(id);
 }
 
 window.onscroll = () => {
@@ -85,6 +86,13 @@ window.onscroll = () => {
         init(20);
     }
 };
+
+
+function changeOverlayColor(id) {
+    let type = allPokemons[id].types[0].type.name;
+    let currentBox = document.getElementById("currentBox");
+    currentBox.classList.add(`${type}-box`)
+}
 
 
 function changeCardColor(id, i) {
