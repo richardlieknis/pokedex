@@ -3,11 +3,8 @@ async function filterPokemons() {
     search = search.toLowerCase();
     searchPokes = [];
 
-    //console.log("EVENT: " + event);
     for (let i = 0; i < allFetchedPokemons.length; i++) {
         const element = allFetchedPokemons[i];
-        // Nur allFetc... ändern! Problem: URL für jeden einzelnen 
-        // Pokemon muss nochmal gefetcht werden
         if (element.name.includes(search)) {
             searchPokes.push(element);
 

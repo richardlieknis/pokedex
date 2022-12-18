@@ -54,6 +54,14 @@ header .logo img:hover {
 header .logo span {
   padding-bottom: 1rem;
   text-shadow: 2px 2px 7px #000;
+  transition: transform 220ms ease-in-out;
+}
+header .logo span a {
+  text-decoration: none;
+  color: #fff;
+}
+header .logo span:hover {
+  transform: translateY(-2px);
 }
 header .searchBox {
   display: flex;
@@ -211,12 +219,14 @@ header button {
   width: 150px;
   scale: 1.5;
   transform: translateY(10px);
+  z-index: 2;
 }
 .selectedPokemonOverlay .currentBox .navBtns {
   position: absolute;
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 250px;
   padding: 1.25rem;
   top: 170px;
   filter: invert(1);
@@ -237,11 +247,17 @@ header button {
   width: 60px;
 }
 .selectedPokemonOverlay .currentBox .infoBox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background-color: #111;
+  color: #eee;
   height: 416px;
   border-radius: 18px 18px 20px 0;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 0;
 }/*# sourceMappingURL=style.css.map */

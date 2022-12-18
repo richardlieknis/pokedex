@@ -75,23 +75,24 @@ function dontClose(event) {
 }
 
 
-function openPokemonOverlay(id) {
+async function openPokemonOverlay(id, bool) {
     const overlay = document.getElementById("overlay");
+    let pokemon = await fetchPokemon(allFetchedPokemons[id].url);
     overlay.classList.remove("d-none");
     overlay.innerHTML = "";
-    overlay.innerHTML = currentPokemonTemp(allPokemons[id], id);
-    changeOverlayColor(id);
+    overlay.innerHTML = currentPokemonTemp(pokemon, id);
+    changeOverlayColor(id, pokemon);
 }
 
 window.onscroll = () => {
     if ((window.innerHeight + window.scrollY - 95) >= document.body.offsetHeight) {
-        init(20);
+        init(5);
     }
 };
 
 
-function changeOverlayColor(id) {
-    let type = allPokemons[id].types[0].type.name;
+function changeOverlayColor(id, pokemon) {
+    let type = pokemon.types[0].type.name;
     let currentBox = document.getElementById("currentBox");
     currentBox.classList.add(`${type}-box`)
 }
@@ -110,5 +111,3 @@ function changeBadgeColor(id, i) {
     let badge = document.getElementById(`badge${pokemon.name}${i}`);
     badge.classList.add(`${type}-badge`);
 }
-
-//TODO - NÄCHSTES TODO -> FARBEN ANPASSEN!

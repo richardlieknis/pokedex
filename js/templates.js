@@ -1,6 +1,6 @@
 function pokeCardTemp(pokemon, i) {
     return `
-    <div id="pokeCard${i}" class="pokeCard" onclick="openPokemonOverlay(${i})">
+    <div id="pokeCard${i}" class="pokeCard" onclick="openPokemonOverlay(${pokemon.id-1})">
         <div class="cardHeader">
                 <span>${pokemon.name} </span>
                 <span style="font-size: 12px">#${pokemon.id}</span>
@@ -38,10 +38,10 @@ function currentPokemonTemp(pokemon, i) {
                 </div>
 
                 <div class="navBtns">
-                    <div onclick="navBox("left")">
+                    <div onclick="openPokemonOverlay(${pokemon.id-2})">
                         <img src="src/img/navBtn.png">
                     </div>
-                    <div onclick="navBox("right")>
+                    <div onclick="openPokemonOverlay(${pokemon.id+1})">
                         <img src="src/img/navBtn.png" style="transform: scaleX(-1)">
                     </div>
                 </div>
