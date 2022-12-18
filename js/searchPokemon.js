@@ -3,16 +3,19 @@ async function filterPokemons() {
     search = search.toLowerCase();
     searchPokes = [];
 
-
-    for (let i = 0; i < allPokemons.length; i++) {
-        const element = allPokemons[i];
+    //console.log("EVENT: " + event);
+    for (let i = 0; i < allFetchedPokemons.length; i++) {
+        const element = allFetchedPokemons[i];
+        // Nur allFetc... ändern! Problem: URL für jeden einzelnen 
+        // Pokemon muss nochmal gefetcht werden
         if (element.name.includes(search)) {
             searchPokes.push(element);
 
         }
-        renderSearchPokemon(searchPokes);
-    }
 
+        //renderSearchPokemon(searchPokes);
+    }
+    loadPokemonSearch(searchPokes);
 }
 
 
@@ -47,4 +50,17 @@ function searchBadgeColor(id, i) {
     let pokemon = searchPokes[id];
     let badge = document.getElementById(`badge${pokemon.name}${i}`);
     badge.classList.add(`${type}-badge`);
+}
+
+async function loadPokemonSearch(pokemons) {
+    searchPokes = [];
+
+    for (let i = 0; i < 10; i++) {
+        const pokemon = pokemons[i];
+        let response = await fetch(pokemon.url);
+        let respJson = await response.json();
+        searchPokes.push(respJson);
+
+        renderSearchPokemon(searchPokes);
+    }
 }

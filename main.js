@@ -3,12 +3,14 @@ let maxPokemon = 20;
 let allPokemons = [];
 let filtredPokemons = [];
 let searchPokes = [];
-let allFetchedPokemons = fetchAllPokemons(true);
+let allFetchedPokemons;
 
 
 async function init(load) {
+    //allPokemons = [];
     maxPokemon += load || 0;
     let pokemons = await fetchAllPokemons();
+    allFetchedPokemons = await fetchAllPokemons(true);
     loadPokemonArray(pokemons);
 }
 
