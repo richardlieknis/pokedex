@@ -4,13 +4,16 @@ let allPokemons = [];
 let filtredPokemons = [];
 let searchPokes = [];
 let allFetchedPokemons;
+let isLoading = false;
 
 
 async function init(load) {
+    isLoading = true;
     maxPokemon += load || 0; // Wenn load = null -> 0
     let pokemons = await fetchAllPokemons();
     allFetchedPokemons = await fetchAllPokemons(true);
-    loadPokemonArray(pokemons);
+    await loadPokemonArray(pokemons);
+    isLoading = false;
 }
 
 
@@ -39,22 +42,20 @@ async function fetchPokemon(url) {
 
 
 async function loadPokemonArray(pokemons) {
-
     for (let i = allPokemons.length; i < pokemons.length; i++) {
         const pokemon = pokemons[i];
         let response = await fetch(pokemon.url);
         let respJson = await response.json();
         allPokemons.push(respJson);
-
         renderAllPokemons(i);
     }
 }
 
 
-function renderAllPokemons(id) {
+async function renderAllPokemons(id) {
     content.innerHTML += pokeCardTemp(allPokemons[id], id);
     renderTypes(id);
-
+    isLoaded = true;
 }
 
 
@@ -93,9 +94,9 @@ async function openPokemonOverlay(id, bool) {
     } catch (e) {}
 }
 
-window.onscroll = () => {
-    if ((window.innerHeight + window.scrollY - 95) >= document.body.offsetHeight) {
-        init(5);
+window.onscroll = async() => {
+    if (((window.innerHeight + window.scrollY - 95) >= document.body.offsetHeight) && !isLoading) {
+        await init(10);
     }
 };
 

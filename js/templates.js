@@ -45,7 +45,7 @@ function currentPokemonTemp(pokemon, i) {
                     <div onclick="openPokemonOverlay(${pokemon.id-2})">
                         <img src="src/img/navBtn.png">
                     </div>
-                    <div onclick="openPokemonOverlay(${pokemon.id+1})">
+                    <div onclick="openPokemonOverlay(${pokemon.id})">
                         <img src="src/img/navBtn.png" style="transform: scaleX(-1)">
                     </div>
                 </div>
@@ -64,7 +64,7 @@ function currentPokemonTemp(pokemon, i) {
                     <span>Abilities</span>
 
                     <span>Stats</span>
-                        <canvas id="pokemonStats" width="200px" height="80px"></canvas>
+                        <canvas id="pokemonStats" width="200px" height="100px"></canvas>
                     </div>
 
 
