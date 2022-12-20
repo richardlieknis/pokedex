@@ -7,8 +7,7 @@ let allFetchedPokemons;
 
 
 async function init(load) {
-    //allPokemons = [];
-    maxPokemon += load || 0;
+    maxPokemon += load || 0; // Wenn load = null -> 0
     let pokemons = await fetchAllPokemons();
     allFetchedPokemons = await fetchAllPokemons(true);
     loadPokemonArray(pokemons);
@@ -16,6 +15,8 @@ async function init(load) {
 
 
 async function fetchAllPokemons(all) {
+    const spinner = document.getElementById("spinner");
+    //spinner.removeAttribute('hidden')
     let urlAtt;
     if (all) { urlAtt = `?offset=${offset}&limit=600`; } else urlAtt = `?offset=${offset}&limit=${maxPokemon}`;
     let urlApi = "https://pokeapi.co/api/v2/pokemon";
@@ -28,6 +29,8 @@ async function fetchAllPokemons(all) {
 
 
 async function fetchPokemon(url) {
+    const spinner = document.getElementById("spinner");
+    //spinner.removeAttribute('hidden');
     const URL = url;
     let response = await fetch(URL);
     let respJson = await response.json();
@@ -77,11 +80,16 @@ function dontClose(event) {
 
 async function openPokemonOverlay(id, bool) {
     const overlay = document.getElementById("overlay");
+
     let pokemon = await fetchPokemon(allFetchedPokemons[id].url);
     overlay.classList.remove("d-none");
     overlay.innerHTML = "";
     overlay.innerHTML = currentPokemonTemp(pokemon, id);
+
     changeOverlayColor(id, pokemon);
+    const overlayCard = document.getElementById('currentBox');
+    overlayCard.classList.add('transToMid');
+    showChartStats();
 }
 
 window.onscroll = () => {

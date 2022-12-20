@@ -31,6 +31,10 @@ function currentPokemonTemp(pokemon, i) {
                     <span style="font-size: 12px">#${pokemon.id}</span>
                 </div>
 
+                <div class="cardType">
+                    <div class="${pokemon.types[0].type.name}-badge pokeType">${pokemon.types[0].type.name}</div>
+                </div>
+
                 <div class="pokeTypes" id="pokeTypes${i}"></div>
 
                 <div class="pokeImg">
@@ -50,7 +54,20 @@ function currentPokemonTemp(pokemon, i) {
                     <img src="src/img/types/type_${pokemon.types[0].type.name}.png" />
                 </div>
 
-                <div class="infoBox">Infos</div>
+                <div class="infoBox">
+                    <div class="iHeader">
+                        <span>Stats</span>
+                        <span>Moves</span>
+                    </div>
+                    
+                    <div id="infos">
+                    <span>Abilities</span>
+                        <canvas id="myChart" width="200px" height="80px"></canvas>
+                    </div>
+
+
+
+                </div>
             </div>
     `;
 }

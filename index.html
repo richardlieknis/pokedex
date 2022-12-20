@@ -6,9 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PokeDex</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="css/pokeCardStyles.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/displaySpinner.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js" integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/chart.js"></script>
     <script src="main.js"></script>
     <script src="js/templates.js"></script>
     <script src="js/searchPokemon.js"></script>
@@ -19,7 +25,7 @@
         <header>
             <div class="logo">
                 <img src="src/img/ball-colorized.png" />
-                <span><a href="" target="_self">Pokedex</a></span>
+                <span><a href="" target="_self">Pokédex</a></span>
             </div>
             <div class="searchBox">
                 <form onsubmit="filterPokemons(); return false;">
@@ -32,12 +38,12 @@
         </header>
         <div id="content">
             <!-- ALLE POKE CARDS - RENDER IN JS -->
-            <!-- ENDE CONTENT -->
         </div>
         <div id="overlay" class="selectedPokemonOverlay d-none" onclick="closeOverlay()">
             <!-- RENDER IN JS -->
         </div>
     </div>
+    <div hidden id="spinner"></div>
 </body>
 
 </html>
