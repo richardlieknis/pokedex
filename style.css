@@ -295,4 +295,6 @@ header button {
 }
 .selectedPokemonOverlay .currentBox .infoBox #infos {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=style.css.map */

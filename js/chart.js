@@ -1,5 +1,5 @@
-function showChartStats() {
-    const ctx = document.getElementById("myChart");
+function showChartStats(pokemon) {
+    const ctx = document.getElementById("pokemonStats");
 
     new Chart(ctx, {
         type: "bar",
@@ -13,7 +13,14 @@ function showChartStats() {
                 "Speed",
             ],
             datasets: [{
-                data: [7, 8, 3, 5, 2, 3],
+                data: [
+                    pokemon.stats[0]["base_stat"],
+                    pokemon.stats[1]["base_stat"],
+                    pokemon.stats[2]["base_stat"],
+                    pokemon.stats[3]["base_stat"],
+                    pokemon.stats[4]["base_stat"],
+                    pokemon.stats[5]["base_stat"]
+                ],
                 backgroundColor: [
                     "#47dc6c",
                     "#eB1F23",

@@ -15,10 +15,10 @@ async function init(load) {
 
 
 async function fetchAllPokemons(all) {
-    const spinner = document.getElementById("spinner");
+    //const spinner = document.getElementById("spinner");
     //spinner.removeAttribute('hidden')
     let urlAtt;
-    if (all) { urlAtt = `?offset=${offset}&limit=600`; } else urlAtt = `?offset=${offset}&limit=${maxPokemon}`;
+    if (all) { urlAtt = `?offset=${offset}&limit=800`; } else urlAtt = `?offset=${offset}&limit=${maxPokemon}`;
     let urlApi = "https://pokeapi.co/api/v2/pokemon";
     let url = `${urlApi}${urlAtt}`;
     let response = await fetch(url);
@@ -29,7 +29,7 @@ async function fetchAllPokemons(all) {
 
 
 async function fetchPokemon(url) {
-    const spinner = document.getElementById("spinner");
+    //const spinner = document.getElementById("spinner");
     //spinner.removeAttribute('hidden');
     const URL = url;
     let response = await fetch(URL);
@@ -80,16 +80,17 @@ function dontClose(event) {
 
 async function openPokemonOverlay(id, bool) {
     const overlay = document.getElementById("overlay");
+    try {
+        let pokemon = await fetchPokemon(allFetchedPokemons[id].url);
+        overlay.classList.remove("d-none");
+        overlay.innerHTML = "";
+        overlay.innerHTML = currentPokemonTemp(pokemon, id);
 
-    let pokemon = await fetchPokemon(allFetchedPokemons[id].url);
-    overlay.classList.remove("d-none");
-    overlay.innerHTML = "";
-    overlay.innerHTML = currentPokemonTemp(pokemon, id);
-
-    changeOverlayColor(id, pokemon);
-    const overlayCard = document.getElementById('currentBox');
-    overlayCard.classList.add('transToMid');
-    showChartStats();
+        changeOverlayColor(id, pokemon);
+        const overlayCard = document.getElementById('currentBox');
+        overlayCard.classList.add('transToMid');
+        showChartStats(pokemon);
+    } catch (e) {}
 }
 
 window.onscroll = () => {

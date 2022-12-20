@@ -54,10 +54,11 @@ async function loadPokemonSearch(pokemons) {
 
     for (let i = 0; i < 10; i++) {
         const pokemon = pokemons[i];
-        let response = await fetch(pokemon.url);
-        let respJson = await response.json();
-        searchPokes.push(respJson);
-
-        renderSearchPokemon(searchPokes);
+        try {
+            let response = await fetch(pokemon.url);
+            let respJson = await response.json();
+            searchPokes.push(respJson);
+            renderSearchPokemon(searchPokes);
+        } catch (e) {}
     }
 }

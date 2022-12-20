@@ -62,7 +62,9 @@ function currentPokemonTemp(pokemon, i) {
                     
                     <div id="infos">
                     <span>Abilities</span>
-                        <canvas id="myChart" width="200px" height="80px"></canvas>
+
+                    <span>Stats</span>
+                        <canvas id="pokemonStats" width="200px" height="80px"></canvas>
                     </div>
 
 
