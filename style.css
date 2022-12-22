@@ -297,4 +297,15 @@ header button {
   padding: 20px;
   display: flex;
   flex-direction: column;
+}
+.selectedPokemonOverlay .currentBox .infoBox #infos p {
+  font-size: 12px;
+  padding: 10px 0;
+  color: #ddd;
+  letter-spacing: 1px;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+.selectedPokemonOverlay .currentBox .infoBox #infos span {
+  text-shadow: 1px 1px 3px #fff;
 }/*# sourceMappingURL=style.css.map */

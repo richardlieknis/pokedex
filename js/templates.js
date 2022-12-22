@@ -23,7 +23,7 @@ function pokeTypeTemp(pokemon, i) {
   `;
 }
 
-function currentPokemonTemp(pokemon, i) {
+function currentPokemonTemp(pokemon, i, species) {
     return `
             <div id="currentBox" class="currentBox" onclick="dontClose(event)">
                 <div class="cardHeader">
@@ -61,9 +61,9 @@ function currentPokemonTemp(pokemon, i) {
                     </div>
                     
                     <div id="infos">
-                    <span>Abilities</span>
-
-                    <span>Stats</span>
+                        <span>Description</span>
+                        <p> ${species["flavor_text_entries"][3].flavor_text}</p>
+                        <span>Stats</span>
                         <canvas id="pokemonStats" width="200px" height="100px"></canvas>
                     </div>
 
