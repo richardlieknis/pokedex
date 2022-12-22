@@ -1,7 +1,15 @@
 async function filterPokemons() {
     let search = document.getElementById('search').value;
+
+    if (search.length < 1) {
+        resetVariables();
+        init();
+        return;
+    }
+
     search = search.toLowerCase();
     searchPokes = [];
+    isLoading = true;
 
     for (let i = 0; i < allFetchedPokemons.length; i++) {
         const element = allFetchedPokemons[i];

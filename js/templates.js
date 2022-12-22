@@ -33,6 +33,9 @@ function currentPokemonTemp(pokemon, i, species) {
 
                 <div class="cardType">
                     <div class="${pokemon.types[0].type.name}-badge pokeType">${pokemon.types[0].type.name}</div>
+                    <div class="currentCardBg">
+                        <img id="currentCardBg" src="src/img/ballCard.png"/>
+                    </div>
                 </div>
 
                 <div class="pokeTypes" id="pokeTypes${i}"></div>
