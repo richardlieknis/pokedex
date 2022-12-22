@@ -3,3 +3,31 @@
         display: none;
     }
 }
+
+
+/* ===== Scrollbar CSS ===== */
+
+
+/* Firefox */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #fff2 #1a1a1a;
+}
+
+
+/* Chrome, Edge, and Safari */
+
+*::-webkit-scrollbar {
+    width: 7px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #353535;
+    border-radius: 0px;
+    border: 0px none #1a1a1a;
+}

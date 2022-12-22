@@ -201,3 +201,7 @@
 .water-badge {
     background-color: var(--water-bd);
 }
+
+.gradient {
+    background: linear-gradient(#fff4, #0004);
+}

@@ -38,7 +38,6 @@ async function fetchPokemon(url) {
 
 async function loadSpeciesJson(id) {
     let species = fetchPokemon(`https://pokeapi.co/api/v2/pokemon-species/${id+1}/`);
-    console.log(species);
     return species;
 }
 
@@ -51,7 +50,6 @@ async function loadPokemonArray(pokemons) {
         renderAllPokemons(i);
     }
 }
-
 
 async function renderAllPokemons(id) {
     content.innerHTML += pokeCardTemp(allPokemons[id], id);
@@ -72,6 +70,7 @@ function renderTypes(id) {
 
 function closeOverlay() {
     const overlay = document.getElementById("overlay");
+    document.body.classList.remove("overflow-hidden");
     overlay.classList.add("d-none");
 }
 
@@ -82,10 +81,10 @@ function dontClose(event) {
 
 async function openPokemonOverlay(id, bool) {
     const overlay = document.getElementById("overlay");
+    document.body.classList.add("overflow-hidden");
     try {
         let pokemon = await fetchPokemon(allFetchedPokemons[id].url);
         let species = await loadSpeciesJson(id);
-        console.log("OPENSPEC:" + species);
         overlay.classList.remove("d-none");
         overlay.innerHTML = "";
         overlay.innerHTML = currentPokemonTemp(pokemon, id, species);
@@ -95,6 +94,31 @@ async function openPokemonOverlay(id, bool) {
         //overlayCard.classList.add('transToMid'); //--> Slide in versuch
         showChartStats(pokemon);
     } catch (e) {}
+}
+
+async function showStats(id) {
+    let infos = document.getElementById('infos');
+    infos.innerHTML = "";
+    openPokemonOverlay(id);
+}
+
+async function showMoves(id) {
+    let infos = document.getElementById('infos');
+    let pokemon = await fetchPokemon(allFetchedPokemons[id].url);
+
+    infos.innerHTML = "";
+    infos.innerHTML = pokeInfoMovesTemp(pokemon);
+    renderMoves(id, pokemon);
+}
+
+function renderMoves(id, pokemon) {
+    let allMovesBox = document.getElementById("allMoves");
+
+    for (let i = 0; i < pokemon.moves.length && i < 40; i++) {
+        const element = pokemon.moves[i].move.name;
+        allMovesBox.innerHTML += `<div class="moveBadges grass-badge">${element}</div>`;
+
+    }
 }
 
 window.onscroll = async() => {
