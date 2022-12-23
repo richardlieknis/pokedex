@@ -1,6 +1,6 @@
 async function filterPokemons() {
     let search = document.getElementById('search').value;
-    if (search.length < 1) {
+    if (search.length <= 1) {
         resetVariables();
         init(0);
         return;
@@ -33,7 +33,7 @@ function pushSearchPokemon(search) {
         const element = allFetchedPokemons[i];
         if (element.name.includes(search)) {
             searchPokes.push(element);
-        }
+        } else console.log("Pokemon existiert nicht");
     }
 }
 

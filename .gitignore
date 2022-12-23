@@ -3,3 +3,5 @@
 style.css.map
 style.sass
 .gitignore
+/css/loadAnim.sass
+/css/loadAnim.css.map

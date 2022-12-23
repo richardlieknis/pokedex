@@ -3,7 +3,7 @@ let maxPokemon = 24;
 let allPokemons = [];
 let filtredPokemons = [];
 let searchPokes = [];
-let allFetchedPokemons;
+let allFetchedPokemons = [];
 let isLoading = false;
 let lastSelect;
 
@@ -22,6 +22,7 @@ async function init(load) {
     let pokemons = await fetchAllPokemons();
     allFetchedPokemons = await fetchAllPokemons(true);
     await loadPokemonArray(pokemons);
+    showLoadAnimation(false);
     isLoading = false;
 }
 
@@ -66,13 +67,28 @@ async function loadPokemonArray(pokemons) {
 async function renderAllPokemons(id) {
     content.innerHTML += pokeCardTemp(allPokemons[id], id);
     renderTypes(id);
+    showLoadAnimation(true);
     isLoaded = true;
+}
+
+
+function showLoadAnimation(bool) {
+    let loadAnimation = document.getElementById('loadAnimation');
+    let mainContainer = document.querySelector('.mainContainer');
+    if (bool) {
+        loadAnimation.classList.remove('d-none');
+        //document.body.classList.add("overflow-hidden");
+    }
+    if (!bool) {
+        loadAnimation.classList.add('d-none');
+        //document.body.classList.remove("overflow-hidden");
+        content.style.paddingRight = "0px"
+    }
 }
 
 
 function renderTypes(id) {
     for (let i = 0; i < allPokemons[id].types.length; i++) {
-
         let pokeTypes = document.getElementById(`pokeTypes${id}`);
         pokeTypes.innerHTML += pokeTypeTemp(allPokemons[id], i);
         changeBadgeColor(id, i);
@@ -135,7 +151,7 @@ function renderMoves(id, pokemon) {
 
 window.onscroll = async() => {
     if (((window.innerHeight + window.scrollY - 95) >= document.body.offsetHeight) && !isLoading) {
-        await init(10);
+        await init(40);
     }
 };
 

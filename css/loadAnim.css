@@ -1,0 +1,56 @@
+.loadAnim {
+  position: fixed;
+  top: 0;
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+  z-index: 200;
+}
+.loadAnim img {
+  width: 60px;
+  transform: rotate(180deg);
+  -webkit-animation-name: rotate;
+          animation-name: rotate;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+    scale: 1;
+  }
+  50% {
+    transform: rotate(180deg);
+    opacity: 0.6;
+    scale: 0.92;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+    scale: 1;
+  }
+  50% {
+    transform: rotate(180deg);
+    opacity: 0.6;
+    scale: 0.92;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
+    scale: 1;
+  }
+}/*# sourceMappingURL=loadAnim.css.map */

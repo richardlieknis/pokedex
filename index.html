@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="css/pokeCardStyles.css" />
     <link rel="stylesheet" href="css/responsive.css" />
-    <link rel="stylesheet" href="css/displaySpinner.css" />
+    <link rel="stylesheet" href="css/loadAnim.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js" integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -21,6 +21,9 @@
 </head>
 
 <body onload="init()">
+    <div id="loadAnimation" class="loadAnim d-none">
+        <img src="src/img/ballCard.png" />
+    </div>
     <div class="maincontainer">
         <header>
             <div class="logo">
@@ -28,7 +31,7 @@
                 <span><a href="" target="_self">Pokédex</a></span>
             </div>
             <div class="searchBox">
-                <input type="text" id="search" placeholder="Suchen..." onkeyup="filterPokemons()" />
+                <input type="text" id="search" placeholder="Search..." onkeyup="filterPokemons()" />
                 <button disabled>
             <img src="src/img/search.png" />
           </button>
@@ -41,7 +44,6 @@
             <!-- RENDER IN JS -->
         </div>
     </div>
-    <div hidden id="spinner"></div>
 </body>
 
 </html>
