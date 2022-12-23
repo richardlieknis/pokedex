@@ -28,12 +28,10 @@
                 <span><a href="" target="_self">Pokédex</a></span>
             </div>
             <div class="searchBox">
-                <form onsubmit="filterPokemons(); return false;">
-                    <input type="text" id="search" placeholder="Pokemon" onkeyup="filterPokemons()" />
-                    <button>
-              <img src="src/img/search.png" />
-            </button>
-                </form>
+                <input type="text" id="search" placeholder="Suchen..." onkeyup="filterPokemons()" />
+                <button disabled>
+            <img src="src/img/search.png" />
+          </button>
             </div>
         </header>
         <div id="content">

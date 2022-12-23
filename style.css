@@ -80,9 +80,6 @@ header button {
   background-color: #fff;
   height: 40px;
 }
-header button:hover {
-  background-color: #e2e2e2;
-}
 header button img {
   width: 20px;
 }
@@ -213,18 +210,18 @@ header button {
   -o-object-fit: contain;
      object-fit: contain;
   overflow: hidden;
-  transform: translateY(170px);
+  transform: translateY(100px);
   opacity: 0.5;
   z-index: 0;
 }
 .selectedPokemonOverlay .currentBox .cardType .currentCardBg img {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 300px;
+  width: 320px;
   -webkit-animation-name: rotate;
           animation-name: rotate;
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
+  -webkit-animation-duration: 12s;
+          animation-duration: 12s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
@@ -233,23 +230,35 @@ header button {
 @-webkit-keyframes rotate {
   0% {
     transform: rotate(0deg);
+    opacity: 1;
+    scale: 1;
   }
   50% {
     transform: rotate(180deg);
+    opacity: 0.4;
+    scale: 0.92;
   }
   100% {
     transform: rotate(360deg);
+    opacity: 1;
+    scale: 1;
   }
 }
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
+    opacity: 1;
+    scale: 1;
   }
   50% {
     transform: rotate(180deg);
+    opacity: 0.4;
+    scale: 0.92;
   }
   100% {
     transform: rotate(360deg);
+    opacity: 1;
+    scale: 1;
   }
 }
 .selectedPokemonOverlay .currentBox .cardType .pokeType {
@@ -322,6 +331,7 @@ header button {
   left: 0;
   right: 0;
   background-color: #111111;
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.5333333333);
   color: #eee;
   height: 416px;
   border-radius: 18px 18px 20px 0;
@@ -341,10 +351,15 @@ header button {
 .selectedPokemonOverlay .currentBox .infoBox .iHeader span {
   text-transform: uppercase;
   font-size: 12px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .selectedPokemonOverlay .currentBox .infoBox .iHeader span:hover {
   cursor: pointer;
   color: #ccc;
+  text-shadow: 0 0 3px #6878d3;
 }
 .selectedPokemonOverlay .currentBox .infoBox .iHeader span:active {
   color: #fff;

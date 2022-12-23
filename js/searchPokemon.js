@@ -1,12 +1,30 @@
 async function filterPokemons() {
     let search = document.getElementById('search').value;
-
     if (search.length < 1) {
         resetVariables();
-        init();
+        init(0);
         return;
     }
+    pushSearchPokemon(search);
+    await loadPokemonSearch(searchPokes);
+}
 
+
+async function loadPokemonSearch(pokemons) {
+    searchPokes = [];
+    for (let i = 0; i < 10; i++) {
+        const pokemon = pokemons[i];
+        try {
+            let response = await fetch(pokemon.url);
+            let respJson = await response.json();
+            searchPokes.push(respJson);
+            renderSearchPokemon(searchPokes);
+        } catch (e) {}
+    }
+}
+
+
+function pushSearchPokemon(search) {
     search = search.toLowerCase();
     searchPokes = [];
     isLoading = true;
@@ -15,12 +33,8 @@ async function filterPokemons() {
         const element = allFetchedPokemons[i];
         if (element.name.includes(search)) {
             searchPokes.push(element);
-
         }
-
-        //renderSearchPokemon(searchPokes);
     }
-    loadPokemonSearch(searchPokes);
 }
 
 
@@ -34,7 +48,6 @@ function renderSearchPokemon(pokemon) {
 
 function renderSearchTypes(pokemon, id) {
     for (let i = 0; i < pokemon[id].types.length; i++) {
-
         let pokeTypes = document.getElementById(`pokeTypes${id}`);
         pokeTypes.innerHTML += pokeTypeTemp(pokemon[id], i);
         searchBadgeColor(id, i);
@@ -55,18 +68,4 @@ function searchBadgeColor(id, i) {
     let pokemon = searchPokes[id];
     let badge = document.getElementById(`badge${pokemon.name}${i}`);
     badge.classList.add(`${type}-badge`);
-}
-
-async function loadPokemonSearch(pokemons) {
-    searchPokes = [];
-
-    for (let i = 0; i < 10; i++) {
-        const pokemon = pokemons[i];
-        try {
-            let response = await fetch(pokemon.url);
-            let respJson = await response.json();
-            searchPokes.push(respJson);
-            renderSearchPokemon(searchPokes);
-        } catch (e) {}
-    }
 }

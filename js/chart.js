@@ -27,7 +27,7 @@ function showChartStats(pokemon) {
                     "#86D2F5",
                     "#c61843",
                     "#3a6ee7",
-                    "#fcfca6",
+                    "#3c3c16",
                 ],
                 borderWidth: 0,
                 borderRadius: 22,
@@ -38,10 +38,20 @@ function showChartStats(pokemon) {
             plugins: {
                 legend: {
                     display: false,
+                    labels: {
+                        fontColor: '#f00'
+                    }
                 },
                 tooltip: {
                     enabled: false,
                 },
+                datalabels: {
+                    color: 'white',
+                    font: {
+                        family: 'pokeBit',
+                        size: 10,
+                    }
+                }
             },
         },
         plugins: [ChartDataLabels]

@@ -7,7 +7,6 @@ let allFetchedPokemons;
 let isLoading = false;
 let lastSelect;
 
-
 function resetVariables() {
     maxPokemon = 24;
     allPokemons = [];
@@ -46,10 +45,12 @@ async function fetchPokemon(url) {
     return respJson;
 }
 
+
 async function loadSpeciesJson(id) {
     let species = fetchPokemon(`https://pokeapi.co/api/v2/pokemon-species/${id+1}/`);
     return species;
 }
+
 
 async function loadPokemonArray(pokemons) {
     for (let i = allPokemons.length; i < pokemons.length; i++) {
@@ -60,6 +61,7 @@ async function loadPokemonArray(pokemons) {
         renderAllPokemons(i);
     }
 }
+
 
 async function renderAllPokemons(id) {
     content.innerHTML += pokeCardTemp(allPokemons[id], id);
@@ -77,6 +79,7 @@ function renderTypes(id) {
     }
     changeCardColor(id, 0);
 }
+
 
 function closeOverlay() {
     const overlay = document.getElementById("overlay");
@@ -98,19 +101,18 @@ async function openPokemonOverlay(id, bool) {
         overlay.classList.remove("d-none");
         overlay.innerHTML = "";
         overlay.innerHTML = currentPokemonTemp(pokemon, id, species);
-
         changeOverlayColor(id, pokemon);
-        //const overlayCard = document.getElementById('currentBox');
-        //overlayCard.classList.add('transToMid'); //--> Slide in versuch
         showChartStats(pokemon);
     } catch (e) {}
 }
+
 
 async function showStats(id) {
     let infos = document.getElementById('infos');
     infos.innerHTML = "";
     openPokemonOverlay(id);
 }
+
 
 async function showMoves(id) {
     let infos = document.getElementById('infos');
@@ -121,13 +123,13 @@ async function showMoves(id) {
     renderMoves(id, pokemon);
 }
 
+
 function renderMoves(id, pokemon) {
     let allMovesBox = document.getElementById("allMoves");
 
     for (let i = 0; i < pokemon.moves.length && i < 40; i++) {
         const element = pokemon.moves[i].move.name;
-        allMovesBox.innerHTML += `<div class="moveBadges grass-badge">${element}</div>`;
-
+        allMovesBox.innerHTML += `<div class="moveBadges">${element}</div>`;
     }
 }
 
